@@ -4,12 +4,10 @@ services:
     runtime: node
     plan: free
     buildCommand: cd backend && npm ci && cd ../frontend && npm ci && npm run build
-    startCommand: node backend/server.js
+    startCommand: NODE_ENV=production node backend/server.js
     healthCheckPath: /api/health
     autoDeploy: true
     envVars:
-      - key: NODE_ENV
-        value: production
       - key: MONGO_URI
         sync: false
       - key: JWT_SECRET
