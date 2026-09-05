@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cream-50 text-gray-800 font-body antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-tomato-500 px-6 py-3 font-semibold text-white shadow-card transition-all duration-300 hover:bg-tomato-600 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 active:shadow-sm disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-gray-800 shadow-soft ring-1 ring-gray-200 transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:ring-gray-300 active:translate-y-0 disabled:opacity-50;
+  }
+  .input {
+    @apply w-full rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-gray-800 placeholder-gray-400 shadow-sm transition focus:border-tomato-400 focus:outline-none focus:ring-2 focus:ring-tomato-400/30;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-gray-700;
+  }
+  .card {
+    @apply rounded-2xl bg-white shadow-soft ring-1 ring-black/5 transition-all duration-300;
+  }
+  .skeleton {
+    @apply relative overflow-hidden rounded-xl bg-gray-200;
+  }
+  .skeleton::after {
+    content: '';
+    @apply absolute inset-0 animate-shimmer bg-gradient-to-r from-transparent via-white/60 to-transparent;
+    background-image: linear-gradient(90deg, rgba(255,255,255,0) 0, rgba(255,255,255,0.6) 40px, rgba(255,255,255,0) 80px);
+    background-size: 400px 100%;
+  }
+}
