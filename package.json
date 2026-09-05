@@ -4,7 +4,7 @@
   "private": true,
   "description": "Recipe Sharing Website - Savory",
   "scripts": {
-    "build": "cd backend && npm ci && cd ../frontend && npm ci && npm run build",
+    "build": "cd backend && npm ci --include=dev && cd ../frontend && npm ci --include=dev && npm run build",
     "start": "node backend/server.js"
   },
   "engines": {
